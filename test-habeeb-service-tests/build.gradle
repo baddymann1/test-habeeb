@@ -1,0 +1,65 @@
+
+check.dependsOn.remove(test)
+
+dependencies {
+
+    implementation enforcedPlatform('com.arca:microservice-dependency-parent:1.0.0-SNAPSHOT')
+
+    testImplementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot'
+    testImplementation 'org.springframework.boot:spring-boot-autoconfigure'
+    testImplementation 'org.springframework.boot:spring-boot-actuator'
+    testImplementation 'org.springframework.boot:spring-boot-starter-actuator'
+    testImplementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework:spring-context-support'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-amqp'
+    testImplementation (group: 'org.springframework.amqp', name: 'spring-amqp')
+    testImplementation (group: 'org.springframework.amqp', name: 'spring-rabbit')
+    testImplementation (group: 'com.amazonaws', name: 'aws-java-sdk-core')
+
+    testImplementation 'info.cukes:cucumber-spring'
+    testImplementation 'info.cukes:cucumber-core'
+    testImplementation 'info.cukes:cucumber-java'
+    testImplementation 'info.cukes:cucumber-junit'
+    testImplementation 'info.cukes:cucumber-jvm'
+    testImplementation 'info.cukes:cucumber-java8'
+
+    testImplementation 'org.hamcrest:hamcrest-library'
+    testImplementation 'org.jasypt:jasypt'
+    testImplementation 'org.jasypt:jasypt-hibernate5'
+//    testImplementation group: 'xerces', name: 'xercesImpl', version: '2.12.0'
+    testImplementation 'xerces:xercesImpl'
+//    testImplementation 'org.aspectj:aspectjweaver'
+    testImplementation 'org.aspectj:aspectjrt'
+    testImplementation group: 'org.aspectj', name: 'aspectjweaver'
+    testImplementation group: 'org.aspectj', name: 'aspectjrt'
+
+    testImplementation group: "net.sf.ehcache", name: "ehcache"
+    testImplementation (group: 'org.hibernate', name: 'hibernate-ehcache') {
+        exclude group: "net.sf.ehcache", module: "ehcache"
+    }
+    testImplementation 'org.postgresql:postgresql'
+    testImplementation group: 'com.sun.jersey.contribs', name: 'jersey-multipart'
+    testImplementation group: 'com.sun.jersey.contribs', name: 'jersey-apache-client4'
+    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations'
+    testImplementation group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider'
+    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-joda'
+    testImplementation group: 'org.apache.httpcomponents', name: 'httpclient'
+
+
+
+    testImplementation (group: 'com.arca', name: 'framework-common')
+    testImplementation (group: 'com.arca', name: 'framework-testing-common')
+    testImplementation (group: 'com.arca', name: 'framework-testing-data')
+    testImplementation (group: 'com.arca', name: 'framework-testing-messaging')
+    testImplementation (group: 'com.arca', name: 'framework-messaging')
+    testImplementation (group: 'com.arca', name: 'framework-data-web')
+    implementation project(':test-habeeb-client')
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testImplementation group: 'junit', name: 'junit'
+}

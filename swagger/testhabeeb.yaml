@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  title: TestHabeeb management API
+  description: Describes the TestHabeeb management functions
+  version: "0.0.1-SNAPSHOT"
+
+host: localhost:320002
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+
+paths:
+  /testHabeeb:
+    post:
+      x-method-name: "doTestHabeeb"
+      description: |
+        Create new TestHabeeb
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      tags:
+        - TestHabeeb
+      parameters:
+        - name: testHabeeb
+          in: body
+          description: The TestHabeeb object
+          schema:
+            $ref: '#/definitions/SATestHabeeb'
+          required: true
+      responses:
+        200:
+          description: The response was succesfully processed.
+          schema:
+            $ref: "#/definitions/SATestHabeeb"
+        400:
+          description: Bad request - credentials were not passed
+        401:
+          description: Unauthorized request - the authentication failed
+        500:
+          description: An internal error has occurred.
+    get:
+      x-method-name: "doTestHabeebGet"
+      description: |
+        Get a TestHabeeb
+      produces:
+        - application/json
+      tags:
+        - TestHabeeb
+      responses:
+        200:
+          description: The response was succesfully processed.
+          schema:
+            $ref: '#/definitions/SATestHabeeb'
+        404:
+          description: TestHabeeb does not exist
+        500:
+          description: An internal error has occurred.
+
+
+definitions:
+  SATestHabeeb:
+    properties:
+      id:
+        type: string
+        description: Unique database ID
+      version:
+        type: integer
+        format: int64
+        description: update version number
+      description:
+        type: string
+        description: decription.
