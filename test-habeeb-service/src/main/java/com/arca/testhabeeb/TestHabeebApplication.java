@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({FrameworkConstants.BASE_PACKAGE})
-@EnableAutoConfiguration
 @EnableConfigurationProperties
 public class TestHabeebApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestHabeebApplication.class);
